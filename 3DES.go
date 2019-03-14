@@ -68,9 +68,15 @@ func main() {
 	// 加密
 	key := []byte("123456781234567812345678")
 	result := TripleDESEncrypt([]byte("床前明月光, 疑是地上霜. 举头望明月, 低头思故乡."), key)
-	fmt.Println("加密之后的数据: ", result)
-	fmt.Println("加密之后的base64数据: ", base64.StdEncoding.EncodeToString(result))
+	fmt.Println("3DES加密之后的数据: ", result)
+	fmt.Println("3DES加密之后的base64数据: ", base64.StdEncoding.EncodeToString(result))
 	// 解密
 	result = TripleDESDecrypt(result, key)
-	fmt.Println("解密之后的数据: ", string(result))
+	fmt.Println("3DES解密之后的数据: ", string(result))
 }
+
+/*
+3DES加密之后的数据:  [212 59 108 139 6 206 6 70 206 171 66 58 68 10 124 83 26 170 200 186 97 118 239 165 98 173 43 164 158 24 72 197 41 168 46 173 72 104 31 54 68 89 175 143 81 217 218 200 21 185 89 61 56 129 155 27 143 56 210 125 117 84 92 138 150 189 99 237 39 18 130 187]
+3DES加密之后的base64数据:  1DtsiwbOBkbOq0I6RAp8UxqqyLphdu+lYq0rpJ4YSMUpqC6tSGgfNkRZr49R2drIFblZPTiBmxuPONJ9dVRcipa9Y+0nEoK7
+3DES解密之后的数据:  床前明月光, 疑是地上霜. 举头望明月, 低头思故乡.
+*/
